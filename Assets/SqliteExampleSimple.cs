@@ -1,6 +1,7 @@
 using System.Data;
 using UnityEngine;
 using Mono.Data.Sqlite;
+using TMPro;
 
 public class SqliteExampleSimple : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SqliteExampleSimple : MonoBehaviour
 
     void Start()
     {
+        transform.GetComponentInChildren<TextMeshPro>().text = $"URI=file:{Application.streamingAssetsPath}/pepest.sqlite";
         // Read all values from the table.
         IDbConnection dbConnection = CreateAndOpenDatabase();
         IDbCommand dbCommand = dbConnection.CreateCommand();
@@ -23,6 +25,7 @@ public class SqliteExampleSimple : MonoBehaviour
         {
             // The `id` has index 0, our `hits` have the index 1.
             Debug.Log(dataReader.GetInt32(0) + ", " + dataReader.GetInt32(1));
+            transform.GetComponentInChildren<TextMeshPro>().text = dataReader.GetInt32(0) + ", " + dataReader.GetInt32(1);
         }
 
         // Remember to always close the connection at the end.
@@ -32,15 +35,15 @@ public class SqliteExampleSimple : MonoBehaviour
     private IDbConnection CreateAndOpenDatabase()
     {
         // Open a connection to the database.
-        string dbUri = "URI=file:Assets\\pepest.sqlite";
+        string dbUri = $"URI=file:{Application.streamingAssetsPath}/pepest.sqlite";
         IDbConnection dbConnection = new SqliteConnection(dbUri);
         dbConnection.Open();
-
+        
         // Create a table for the fakemons in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand();
         dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS Pepest (id INTEGER PRIMARY KEY, name INTEGER )";
         dbCommandCreateTable.ExecuteReader();
-
+        
         return dbConnection;
     }
     /*
