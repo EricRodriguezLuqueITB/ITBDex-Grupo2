@@ -6,6 +6,7 @@ using System.Data.Common;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 
+// Grupo2 (ITBDex)
 static public class SQLConn
 {
     // Resources:
