@@ -9,10 +9,6 @@ using System.Collections.Generic;
 // Grupo2 (ITBDex)
 static public class SQLConn
 {
-    // Resources:
-    // https://www.mono-project.com/docs/database-access/providers/sqlite/
-
-
     static private IDbConnection InsertThings()
     {
         IDbConnection dbConnection = CreateAndOpenDatabase();
