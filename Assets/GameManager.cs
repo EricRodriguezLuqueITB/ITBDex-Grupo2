@@ -10,10 +10,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         fakemons = SQLConn.GetFakemon();
-        foreach (var item in fakemons)
-        {
-            Debug.Log(item.fakename);
-        }
     }
     public void CloseGame()
     {
