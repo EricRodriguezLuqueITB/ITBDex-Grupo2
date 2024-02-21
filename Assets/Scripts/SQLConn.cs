@@ -5,6 +5,7 @@ using TMPro;
 using System.Data.Common;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using System.Linq;
 
 // Grupo2 (ITBDex)
 static public class SQLConn
@@ -67,6 +68,7 @@ static public class SQLConn
             fakemons.Add(fakemon);
             //Debug.Log(reader.GetInt32(0) + reader.GetString(1) + reader.GetString(2) + reader.GetString(3) + reader.GetString(4));
         }
+        fakemons.Where(fk => fk.fakename[0] == 'a');
 
         dbConnection.Close();
         return fakemons;
