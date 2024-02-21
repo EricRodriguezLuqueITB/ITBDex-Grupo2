@@ -15,15 +15,22 @@ public class ListFakemons : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         container = transform.GetComponentsInChildren<Transform>().Where(item => item.name == "container").ToList()[0];
-
-        foreach (Fakemon f in gm.fakemons)
+        CreateList(gm.fakemons);
+    }
+    private void CreateList(List<Fakemon> fks)
+    {
+        foreach (Fakemon f in fks)
         {
             GameObject obj = Instantiate(prefab, container.transform);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = $"{f.id}º - {f.fakename} ({f.type})  / {f.season}";
+            obj.GetComponent<ProfileButton>().fk = f;
         }
-
     }
     private void OnDisable()
+    {
+        ClearList();
+    }
+    private void ClearList()
     {
         List<Transform> childs = container.GetComponentsInChildren<Transform>().ToList();
         int qty = childs.Count();
