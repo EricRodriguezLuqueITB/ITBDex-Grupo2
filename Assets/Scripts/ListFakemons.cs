@@ -11,6 +11,7 @@ public class ListFakemons : MonoBehaviour
 
     [SerializeField] private GameObject prefab;
     private Transform container;
+
     private void OnEnable()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();

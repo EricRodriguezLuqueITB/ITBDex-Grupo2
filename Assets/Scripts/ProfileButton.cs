@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class ProfileButton : MonoBehaviour
 {
-    [SerializeField] private Button button;
     public Fakemon fk;
     
     private void Start()
     {
-        button.onClick.AddListener(OnClick);
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
     private void OnClick()
     {
