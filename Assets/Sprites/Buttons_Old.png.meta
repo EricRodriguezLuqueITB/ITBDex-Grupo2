@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f885747959eaa254f8195f946aae2f78
+guid: 7365ddf114e71ff49b9d42843590e188
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,26 +106,60 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackButton_1
+      name: "Sense t\xEDtol_0"
       rect:
         serializedVersion: 2
-        x: 18
-        y: 957
-        width: 958
-        height: 221
+        x: 1
+        y: 197
+        width: 285
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 156, y: 33, z: 37, w: 31}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ab7726da70abe4e85f7f02d8eb79f8
-      internalID: 349312937
+      spriteID: 455db4bb15fced94c86d6a0ae4259148
+      internalID: -755831625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sense t\xEDtol_1"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 384
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 233, y: 140, z: 14, w: 55}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789c147ee83584d4a8e35436794a351a
+      internalID: -2131914744
       vertices: []
       indices: 
       edges: []
@@ -141,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BackButton_0: -1545339583
-      BackButton_1: 349312937
-      BackButton_2: 188704511
+      "Sense t\xEDtol_0": -755831625
+      "Sense t\xEDtol_1": -2131914744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
