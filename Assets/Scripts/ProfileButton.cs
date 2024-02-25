@@ -14,7 +14,6 @@ public class ProfileButton : MonoBehaviour
     }
     private void OnClick()
     {
-        //Debug.Log($"prof: {GameObject.Find("Canvas").transform.Find("Profile").name} - dex: {GameObject.Find("Canvas").transform.Find("Dex").name}");
         GameObject profile = GameObject.Find("Canvas").transform.Find("Profile").gameObject;
 
         profile.GetComponent<Profile>().SetFakemon(fk);

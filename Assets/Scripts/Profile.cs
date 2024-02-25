@@ -11,7 +11,8 @@ public class Profile : MonoBehaviour
     [SerializeField] private GameObject fakename;
     [SerializeField] private GameObject nickname;
     [SerializeField] private GameObject description;
-    
+    [SerializeField] private GameObject map;
+
     public void SetFakemon(Fakemon fk)
     {
         this.fk = fk;

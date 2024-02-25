@@ -14,7 +14,7 @@ static public class SQLConn
     {
         IDbConnection dbConnection = CreateAndOpenDatabase();
         IDbCommand dbCommand = dbConnection.CreateCommand();
-        dbCommand.CommandText = "INSERT OR REPLACE INTO Seasons (SeasonID, season) VALUES (1, 'Verano'), (2, 'Otoño'), (3, 'Invierno'), (4, 'Primavera');";
+        dbCommand.CommandText = "INSERT OR REPLACE INTO Seasons (SeasonID, season) VALUES (1, 'Summer'), (2, 'Autumm'), (3, 'Winter'), (4, 'Spring');";
         dbCommand.CommandText += "INSERT OR REPLACE INTO Types (TypeID, type) VALUES (1, 'Fuego'), (2, 'Agua'), (3, 'Tierra'),(4, 'Aire'), (5, 'Eléctrico');";
         dbCommand.CommandText += "INSERT OR REPLACE INTO Fakemons (id, name, SeasonID, TypeID, info) VALUES (1, 'Flameon', 1, 1, 'Un fakemon de tipo fuego que aparece en verano.')," +
             "(2, 'Aquareon', 2, 2, 'Un fakemon de tipo agua más común en otoño.')," +
