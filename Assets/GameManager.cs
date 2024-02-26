@@ -6,8 +6,9 @@ using UnityEditor.UIElements;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{
+{ 
     public List<Fakemon> fakemons;
+    public List<Sprite> pixelArts;
     void Awake()
     {
         fakemons = SQLConn.GetFakemon();

@@ -16,13 +16,14 @@ static public class SQLConn
         IDbCommand dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = "INSERT OR REPLACE INTO Seasons (SeasonID, season) VALUES (1, 'Summer'), (2, 'Autumm'), (3, 'Winter'), (4, 'Spring');";
         dbCommand.CommandText += "INSERT OR REPLACE INTO Types (TypeID, type) VALUES (1, 'Fuego'), (2, 'Agua'), (3, 'Tierra'),(4, 'Aire'), (5, 'Eléctrico');";
-        dbCommand.CommandText += "INSERT OR REPLACE INTO Fakemons (id, name, SeasonID, TypeID, info) VALUES (1, 'Flameon', 1, 1, 'Un fakemon de tipo fuego que aparece en verano.')," +
+        dbCommand.CommandText += "INSERT OR REPLACE INTO Fakemons (id, name, SeasonID, TypeID, info) VALUES " +
+            "(1, 'Flameon', 1, 1, 'Un fakemon de tipo fuego que aparece en verano.')," +
             "(2, 'Aquareon', 2, 2, 'Un fakemon de tipo agua más común en otoño.')," +
             "(3, 'Terraeon', 3, 3, 'Un fakemon de tipo tierra que domina en invierno.')," +
             "(4, 'Aireon', 4, 4, 'Un fakemon de tipo aire que vuela alto en primavera.')," +
             "(5, 'Shockeon', 1, 5, 'Un fakemon eléctrico que a menudo se encuentra durante tormentas de verano.')," +
-            "(6, 'Fakermon', 1, 3, 'Un fakemon falsísimo que no se encuentra.')," +
-            "(7, 'Porromon', 1, 2, 'Un porro artístico con forma de fakemon.');";
+            "(6, 'Jack o'' Bat', 2, 1, 'Calabasa radioactiva autosuficiente come mursiegalos.')," +
+            "(7, 'AttumBat', 2, 4, 'Calabaso-Mursiegalo mu xulo, es lo que pasa cuando una calabaza radioactiva muerde a un pobre e inocente murciegalo vegetariano.');";
         dbCommand.ExecuteNonQuery();
         return dbConnection;
     }

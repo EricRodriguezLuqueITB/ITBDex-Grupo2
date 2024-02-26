@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Profile : MonoBehaviour
 {
@@ -12,6 +16,7 @@ public class Profile : MonoBehaviour
     [SerializeField] private GameObject nickname;
     [SerializeField] private GameObject description;
     [SerializeField] private GameObject map;
+    [SerializeField] private GameObject icon;
 
     public void SetFakemon(Fakemon fk)
     {
@@ -19,6 +24,13 @@ public class Profile : MonoBehaviour
         SetText(fakename, fk.fakename);
         SetText(nickname, "Es el fakemon " + fk.season);
         SetText(description, fk.info);
+
+        List<Sprite> result = GameObject.Find("GameManeger").GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
+        if(result.Count > 0)
+        {
+            icon.GetComponent<UnityEngine.UI.Image>().sprite = result[0];
+        }
+
     }
     private void SetText(GameObject obj, string text)
     {
