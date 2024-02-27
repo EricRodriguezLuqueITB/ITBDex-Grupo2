@@ -28,6 +28,7 @@ public class Profile : MonoBehaviour
         List<Sprite> result = GameObject.Find("GameManager").GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
 
         icon.GetComponent<UnityEngine.UI.Image>().sprite = result.Count > 0 ? result[0] : null;
+        icon.GetComponent<UnityEngine.UI.Image>().color = result.Count > 0 ? Color.white : new Color(0,0,0,0);
 
         SetText(icon, "");
 
