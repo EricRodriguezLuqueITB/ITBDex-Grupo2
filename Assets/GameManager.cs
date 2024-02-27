@@ -9,10 +9,18 @@ public class GameManager : MonoBehaviour
 { 
     public List<Fakemon> fakemons;
     public List<Sprite> pixelArts;
+    public static GameManager instance;
+
+
     void Awake()
     {
         fakemons = SQLConn.GetFakemon();
         this.Show(1);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else Destroy(gameObject);
     }
 
     void Update()
