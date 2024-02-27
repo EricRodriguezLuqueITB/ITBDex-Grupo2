@@ -22,7 +22,7 @@ static public class SQLConn
             "(3, 'Terraeon', 3, 3, 'Un fakemon de tipo tierra que domina en invierno.')," +
             "(4, 'Aireon', 4, 4, 'Un fakemon de tipo aire que vuela alto en primavera.')," +
             "(5, 'Shockeon', 1, 5, 'Un fakemon eléctrico que a menudo se encuentra durante tormentas de verano.')," +
-            "(6, 'Jack o'' Bat', 2, 1, 'Calabasa radioactiva autosuficiente come mursiegalos.')," +
+            "(6, 'Jack o''Bat', 2, 1, 'Calabasa radioactiva autosuficiente come mursiegalos.')," +
             "(7, 'AttumBat', 2, 4, 'Calabaso-Mursiegalo mu xulo, es lo que pasa cuando una calabaza radioactiva muerde a un pobre e inocente murciegalo vegetariano.');";
         dbCommand.ExecuteNonQuery();
         return dbConnection;

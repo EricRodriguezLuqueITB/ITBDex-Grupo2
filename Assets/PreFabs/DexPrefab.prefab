@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59a0f4f4af8525f48ba4e5f49a070ef2, type: 2}
-  m_sharedMaterial: {fileID: 2752602699465265223, guid: 59a0f4f4af8525f48ba4e5f49a070ef2,
+  m_fontAsset: {fileID: 11400000, guid: 4b785ade54b8e814095fa789d0875c53, type: 2}
+  m_sharedMaterial: {fileID: 5636526093912492926, guid: 4b785ade54b8e814095fa789d0875c53,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58656b9d21987cc40b307c583d8c77c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 0}
 --- !u!1 &8898863225781400410
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ GameObject:
   - component: {fileID: 4596641745280829782}
   - component: {fileID: 7848063926568654360}
   m_Layer: 0
-  m_Name: FakemonListPrefab
+  m_Name: DexPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,3 +283,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58656b9d21987cc40b307c583d8c77c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 4596641745280829782}
