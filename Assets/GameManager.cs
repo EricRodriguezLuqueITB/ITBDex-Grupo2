@@ -14,13 +14,14 @@ public class GameManager : MonoBehaviour
     public GameObject stage3d;
     public TMP_FontAsset typography;
 
+    public int actualSort;
+
     public static GameManager instance;
 
 
     void Awake()
     {
         fakemons = SQLConn.GetFakemon();
-        this.Show(1);
         if (instance == null)
         {
             instance = this;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         ChangeTypo();
+        /*
         if (Input.GetKeyDown("1"))
             this.Sort(0);
         if (Input.GetKeyDown("2"))
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
             this.Sort(2);
         if (Input.GetKeyDown("4"))
             this.Sort(3);
+        */
     }
     public void SetModel(string name)
     {
@@ -59,16 +62,17 @@ public class GameManager : MonoBehaviour
 
         modelInstance = Instantiate(result.Count > 0 ? result[0] : models[0], stage3d.transform);
     }
-    public void Sort(int method)
+    public List<Fakemon> Sort(int method)
     {
         var sortedList = new List<Fakemon>();
+
         switch (method)
         {
             case 0:
                 sortedList = fakemons.OrderBy(x => x.id).ToList();
                 break;
             case 1:
-                sortedList =fakemons.OrderBy(x => x.fakename).ToList();
+                sortedList = fakemons.OrderBy(x => x.fakename).ToList();
                 break;
             case 2:
                 sortedList = fakemons.OrderBy(x => x.season).ToList();
@@ -78,8 +82,13 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        fakemons = sortedList;
-        this.Show(method);
+        if (actualSort == method)
+        {
+            sortedList.Reverse();
+            actualSort = 20;
+        } else actualSort = method;
+
+        return sortedList;
     }
 
     public void Show(int method)
