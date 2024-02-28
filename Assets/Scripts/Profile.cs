@@ -22,13 +22,13 @@ public class Profile : MonoBehaviour
         SetText(nickname, $"{fk.season} fakemon");
         SetText(description, fk.info);
 
-        List<Sprite> result = GameObject.Find("GameManager").GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
+        List<Sprite> result = GameManager.instance.GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
 
         icon.GetComponent<UnityEngine.UI.Image>().sprite = result.Count > 0 ? result[0] : null;
         icon.GetComponent<UnityEngine.UI.Image>().color = result.Count > 0 ? Color.white : new Color(0,0,0,0);
 
         SetText(icon, "");
-
+        GameManager.instance.SetModel(fk.fakename);
     }
     private void SetText(GameObject obj, string text)
     {

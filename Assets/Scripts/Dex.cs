@@ -14,7 +14,7 @@ public class Dex : MonoBehaviour
 
     private void OnEnable()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm = GameManager.instance.GetComponent<GameManager>();
         container = transform.GetComponentsInChildren<Transform>().Where(item => item.name == "container").ToList()[0];
         CreateList(gm.fakemons);
     }
@@ -24,6 +24,23 @@ public class Dex : MonoBehaviour
         {
             GameObject obj = Instantiate(prefab, container.transform);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = $"{f.id}º - {f.fakename} ({f.type})  / {f.season}";
+
+            foreach (var item in obj.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                switch (item.name)
+                {
+                    case "TextID":
+                        item.text = f.id.ToString();
+                        break;
+                    case "TextName":
+                        item.text = f.fakename;
+                        break;
+                    case "TextType":
+                        item.text = f.type;
+                        break;
+                }
+            }
+
 
             ProfileButton pb = obj.GetComponent<ProfileButton>();
 

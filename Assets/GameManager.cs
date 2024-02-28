@@ -3,11 +3,17 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 { 
     public List<Fakemon> fakemons;
     public List<Sprite> pixelArts;
+    public List<GameObject> models;
+    public GameObject modelInstance;
+    public GameObject stage3d;
+    public TMP_FontAsset typography;
+
     public static GameManager instance;
 
 
@@ -21,15 +27,22 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
-
-    private void Start()
+    private void ChangeTypo()
     {
-        
+        if (typography != null)
+        {
+            foreach (var item in FindObjectsOfType<TextMeshProUGUI>())
+            {
+                item.font = typography;
+                item.fontStyle = FontStyles.Normal;
+            }
+        }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown("1"))
+        ChangeTypo();
+        if (Input.GetKeyDown("1"))
             this.Sort(0);
         if (Input.GetKeyDown("2"))
             this.Sort(1);
@@ -37,6 +50,14 @@ public class GameManager : MonoBehaviour
             this.Sort(2);
         if (Input.GetKeyDown("4"))
             this.Sort(3);
+    }
+    public void SetModel(string name)
+    {
+        var result = models.Where(item => item.name.Contains(name)).ToList();
+
+        if (modelInstance != null) Destroy(modelInstance);
+
+        modelInstance = Instantiate(result.Count > 0 ? result[0] : models[0], stage3d.transform);
     }
     public void Sort(int method)
     {

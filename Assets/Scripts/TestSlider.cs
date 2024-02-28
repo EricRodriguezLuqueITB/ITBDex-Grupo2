@@ -10,7 +10,7 @@ public class TestSlider : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();//Donde pone Test poner el nombre del Objeto con el componente AudioManager
+        audioManager = AudioManager.instance.GetComponent<AudioManager>();//Donde pone Test poner el nombre del Objeto con el componente AudioManager
         Slider[] sliders = GetComponentsInChildren<Slider>();
         musicSlider = sliders[0];
         musicSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(musicSlider.value, 1); });
