@@ -26,18 +26,18 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        SetAudioParameters(sounds);
-        SetAudioParameters(music);
+        SetAudioParameters(sounds, "Sound");
+        SetAudioParameters(music, "Music");
 
     }
-    private void SetAudioParameters(Sound[] array)
+    private void SetAudioParameters(Sound[] array, string type)
     {
         foreach (Sound sound in array)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
 
-            sound.source.volume = sound.volume;
+            sound.source.volume = PlayerPrefs.GetFloat(type);
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
