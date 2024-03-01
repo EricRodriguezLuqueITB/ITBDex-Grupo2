@@ -1249,6 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb3cc30e5757834f83a9e47af3217ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoom: 1
 --- !u!4 &181635504
 Transform:
   m_ObjectHideFlags: 0
@@ -4045,6 +4046,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 181635503}
+        m_TargetAssemblyTypeName: ConstantRotation, Assembly-CSharp
+        m_MethodName: changeZoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1883387104}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive

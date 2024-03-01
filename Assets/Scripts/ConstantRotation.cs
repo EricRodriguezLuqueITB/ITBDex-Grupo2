@@ -5,10 +5,10 @@ using UnityEngine;
 public class ConstantRotation : MonoBehaviour
 {
     private Touch touch;
-    private Vector2 touchPosition;
-    private Quaternion rotationY;
+    private Vector3 rotationY;
     private float rotateSpeedModifier = 0.4f;
-    private bool zoom = true;
+    public bool zoom = true;
+    private float clock;
 
     private void FixedUpdate()
     {
@@ -22,19 +22,33 @@ public class ConstantRotation : MonoBehaviour
             {
                 touch = Input.GetTouch(0);
             }
+            else
+            {
+                if (rotationY.y != 0 && Time.time - clock > 0.1f)
+                {
+                    rotationY = RotateY(rotationY.y * 0.5f);
+
+                    if (rotationY.y < 0.0002f && rotationY.y > -0.0002f)
+                    {
+                        rotationY = Vector3.zero;
+                    }
+                    clock = Time.time;
+                }
+            }
+
             if (touch.phase == TouchPhase.Moved)
             {
-                rotationY = Quaternion.Euler(
-                    0f,
-                    -touch.deltaPosition.x * rotateSpeedModifier,
-                    0f);
-                transform.rotation = rotationY * transform.rotation;
+                rotationY = RotateY(-touch.deltaPosition.x * rotateSpeedModifier);
             }
+            transform.Rotate(rotationY);
         }
-
     }
     public void changeZoom()
     {
         zoom = !zoom;
+    }
+    private Vector3 RotateY(float y)
+    {
+        return new Vector3(0, y, 0);
     }
 }
