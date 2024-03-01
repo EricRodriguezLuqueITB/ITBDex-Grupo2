@@ -2,21 +2,49 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
-{
+{ 
     public List<Fakemon> fakemons;
+    public List<Sprite> pixelArts;
+    public List<GameObject> models;
+    public GameObject modelInstance;
+    public GameObject stage3d;
+    public TMP_FontAsset font;
+
+    public int actualSort;
+
+    public static GameManager instance;
+
+
     void Awake()
     {
         fakemons = SQLConn.GetFakemon();
-        this.Show(1);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else Destroy(gameObject);
+    }
+    private void ChangeTypo()
+    {
+        if (instance.font != null)
+        {
+            foreach (var item in FindObjectsOfType<TextMeshProUGUI>())
+            {
+                item.font = instance.font;
+                item.fontStyle = FontStyles.Normal;
+            }
+        }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown("1"))
+        ChangeTypo();
+        /*
+        if (Input.GetKeyDown("1"))
             this.Sort(0);
         if (Input.GetKeyDown("2"))
             this.Sort(1);
@@ -24,17 +52,27 @@ public class GameManager : MonoBehaviour
             this.Sort(2);
         if (Input.GetKeyDown("4"))
             this.Sort(3);
+        */
     }
-    public void Sort(int method)
+    public void SetModel(string name)
+    {
+        var result = models.Where(item => item.name.Contains(name)).ToList();
+
+        if (modelInstance != null) Destroy(modelInstance);
+
+        modelInstance = Instantiate(result.Count > 0 ? result[0] : models[0], stage3d.transform);
+    }
+    public List<Fakemon> Sort(int method)
     {
         var sortedList = new List<Fakemon>();
+
         switch (method)
         {
             case 0:
                 sortedList = fakemons.OrderBy(x => x.id).ToList();
                 break;
             case 1:
-                sortedList =fakemons.OrderBy(x => x.fakename).ToList();
+                sortedList = fakemons.OrderBy(x => x.fakename).ToList();
                 break;
             case 2:
                 sortedList = fakemons.OrderBy(x => x.season).ToList();
@@ -44,8 +82,13 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        fakemons = sortedList;
-        this.Show(method);
+        if (actualSort == method)
+        {
+            sortedList.Reverse();
+            actualSort = 20;
+        } else actualSort = method;
+
+        return sortedList;
     }
 
     public void Show(int method)
@@ -76,7 +119,7 @@ public class GameManager : MonoBehaviour
     }
     public void CloseGame()
     {
-        if(Application.isEditor) EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

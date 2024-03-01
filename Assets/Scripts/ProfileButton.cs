@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ProfileButton : MonoBehaviour
+public class ProfileButton : MonoBehaviour, IPointerUpHandler
 {
-    [SerializeField] private Button button;
-    /*
-    private void Start()
+    public Fakemon fk;
+    public Button btn;
+
+    public void OnClick()
     {
-        button.onClick.AddListener(OnClick);
+        GameObject profile = GameObject.Find("Canvas").transform.Find("Profile").gameObject;
+
+        profile.GetComponent<Profile>().SetFakemon(fk);
+        profile.SetActive(true);
+
+        GameObject.Find("Canvas").transform.Find("Dex").gameObject.SetActive(false);
     }
-    private void OnClick()
+    public void OnPointerUp(PointerEventData a)
     {
-        GameObject.Find("Profile").SetActive(true);
-        GameObject.Find("Dex").SetActive(false);
-    }*/
+        transform.parent.parent.parent.GetComponent<Dex>().SetPixelArt(fk.fakename);
+    }
 }
