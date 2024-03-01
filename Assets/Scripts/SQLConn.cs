@@ -6,6 +6,7 @@ using System.Data.Common;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 // Grupo2 (ITBDex)
 static public class SQLConn
@@ -31,8 +32,19 @@ static public class SQLConn
 
     static private IDbConnection CreateAndOpenDatabase()
     {
-        // Open a connection to the database.
-        string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex.sqlite";
+        //Application database Path android
+        string filepath = Application.persistentDataPath + "/" + "itbdex.s3db";
+        if (!File.Exists(filepath))
+        {
+            // UNITY_ANDROID
+            WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/itbdex.s3db");
+            while (!loadDB.isDone) { }
+            // then save to Application.persistentDataPath
+            File.WriteAllBytes(filepath, loadDB.bytes);
+
+        }
+            // Open a connection to the database.
+            string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.s3db";
         IDbConnection dbConnection = new SqliteConnection(dbUri);
         dbConnection.Open();
 
@@ -48,7 +60,8 @@ static public class SQLConn
             "FROM Fakemons F " +
             "JOIN Seasons S ON F.SeasonID = S.SeasonID " +
             "JOIN Types T ON F.TypeID = T.TypeID;";
-        dbCommandCreateTable.ExecuteNonQuery();
+        dbCommandCreateTable.ExecuteReader();
+       // dbCommandCreateTable.ExecuteNonQuery();
 
         return dbConnection;
     }
