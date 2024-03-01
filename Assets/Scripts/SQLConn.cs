@@ -32,6 +32,7 @@ static public class SQLConn
 
     static private IDbConnection CreateAndOpenDatabase()
     {
+        
         //Application database Path android
         string filepath = Application.persistentDataPath + "/" + "itbdex.s3db";
         if (!File.Exists(filepath))
@@ -45,6 +46,11 @@ static public class SQLConn
         }
             // Open a connection to the database.
             string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.s3db";
+        
+
+        // Open a connection to the database.
+        //string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex.sqlite";
+
         IDbConnection dbConnection = new SqliteConnection(dbUri);
         dbConnection.Open();
 

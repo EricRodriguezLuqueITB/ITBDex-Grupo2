@@ -14,8 +14,9 @@ public class Dex : MonoBehaviour
 
     [SerializeField] private GameObject pixelArtCage;
     public int actualSort;
-    private string textSearch;
+    private string textSearch = "";
     private bool reversed;
+    private string actualSeason = "Clear";
 
     private void OnEnable()
     {
@@ -68,6 +69,7 @@ public class Dex : MonoBehaviour
                 }
             }
 
+            obj.GetComponentsInChildren<Image>().Where(item => item.name == "SeasonIcon").ToArray()[0].sprite = GameManager.instance.seasonIcons.Where(item => item.name == f.season).ToArray()[0];
 
             ProfileButton pb = obj.GetComponent<ProfileButton>();
 
@@ -85,12 +87,18 @@ public class Dex : MonoBehaviour
     public void Search(string text)
     {
         GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.Contains(text)).ToList();
+        if (actualSeason != "Clear") GameManager.instance.fakemonsFiltered = GameManager.instance.fakemonsFiltered.Where(item => item.season == actualSeason).ToList();
         CreateList(SortFakemon(actualSort, false));
         textSearch = text;
     }
     public void Search(int sort)
     {
         CreateList(SortFakemon(sort, true));
+    }
+    public void FilterSeason(string season)
+    {
+        actualSeason = season;
+        Search(textSearch);
     }
     public List<Fakemon> SortFakemon(int method, bool revers)
     {

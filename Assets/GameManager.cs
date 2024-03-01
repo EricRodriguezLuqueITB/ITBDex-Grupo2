@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
 { 
     public List<Fakemon> fakemons;
     public List<Fakemon> fakemonsFiltered;
+
     public List<Sprite> pixelArts;
     public List<GameObject> models;
+    public List<Sprite> seasonIcons;
+
     public GameObject modelInstance;
     public GameObject stage3d;
     public TMP_FontAsset font;
