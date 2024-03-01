@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,9 +13,13 @@ public class Dex : MonoBehaviour
     private Transform container;
 
     [SerializeField] private GameObject pixelArtCage;
+    public int actualSort;
+    private string textSearch;
+    private bool reversed;
 
     private void OnEnable()
     {
+        reversed = false;
         container = transform.GetComponentsInChildren<Transform>().Where(item => item.name == "container").ToList()[0];
         CreateList(GameManager.instance.fakemons);
     }
@@ -77,9 +82,44 @@ public class Dex : MonoBehaviour
         pixelArtCage.GetComponent<Image>().sprite = result.Count > 0 ? result[0] : GameManager.instance.pixelArts[0];
         pixelArtCage.GetComponentInChildren<TextMeshProUGUI>().text = "";
     }
-    private void OnDisable()
+    public void Search(string text)
     {
-        ClearList();
+        GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.Contains(text)).ToList();
+        CreateList(SortFakemon(actualSort, false));
+        textSearch = text;
+    }
+    public void Search(int sort)
+    {
+        CreateList(SortFakemon(sort, true));
+    }
+    public List<Fakemon> SortFakemon(int method, bool revers)
+    {
+        var sortedList = GameManager.instance.fakemonsFiltered;
+
+        switch (method)
+        {
+            case 0:
+                sortedList = sortedList.OrderBy(x => x.id).ToList();
+                break;
+            case 1:
+                sortedList = sortedList.OrderBy(x => x.fakename).ToList();
+                break;
+            case 2:
+                sortedList = sortedList.OrderBy(x => x.season).ToList();
+                break;
+            case 3:
+                sortedList = sortedList.OrderBy(x => x.type).ToList();
+                break;
+        }
+
+        if (revers && method == actualSort) reversed = !reversed;
+        else if (revers && method != actualSort) reversed = false;
+
+        if (reversed) sortedList.Reverse();
+
+        actualSort = method;
+
+        return sortedList;
     }
     private void ClearList()
     {
@@ -90,5 +130,9 @@ public class Dex : MonoBehaviour
         {
             Destroy(childs[i].gameObject);
         }
+    }
+    private void OnDisable()
+    {
+        ClearList();
     }
 }

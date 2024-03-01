@@ -17,6 +17,6 @@ public class ButtonSort : MonoBehaviour
     }
     private void Action()
     {
-        dex.CreateList(GameManager.instance.Sort(sortNum));
+        dex.Search(sortNum);
     }
 }
