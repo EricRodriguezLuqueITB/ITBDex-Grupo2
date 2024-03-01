@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> models;
     public GameObject modelInstance;
     public GameObject stage3d;
-    public TMP_FontAsset typography;
+    public TMP_FontAsset font;
 
     public int actualSort;
 
@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
     }
     private void ChangeTypo()
     {
-        if (typography != null)
+        if (instance.font != null)
         {
             foreach (var item in FindObjectsOfType<TextMeshProUGUI>())
             {
-                item.font = typography;
+                item.font = instance.font;
                 item.fontStyle = FontStyles.Normal;
             }
         }

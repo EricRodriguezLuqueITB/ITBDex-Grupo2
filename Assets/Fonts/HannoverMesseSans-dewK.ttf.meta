@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 29b214d0aafef274ea44ebcf27d131ae
+guid: 0f4a7747b92e329448c3c1417644f71b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Winter Seasson
+  - Hannover Messe
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

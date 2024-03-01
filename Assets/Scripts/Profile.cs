@@ -19,8 +19,8 @@ public class Profile : MonoBehaviour
     {
         this.fk = fk;
         SetText(fakename, fk.fakename);
-        SetText(nickname, $"{fk.season} fakemon");
-        SetText(description, fk.info);
+        SetText(nickname, fk.info.Split('|')[0]);
+        SetText(description, fk.info.Split('|')[1]);
 
         List<Sprite> result = GameManager.instance.GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
 

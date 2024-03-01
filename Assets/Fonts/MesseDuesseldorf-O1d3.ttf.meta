@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2b36eb20f17e454d999b3459c55e7ca
+guid: 9978087e43e976041a391b89bc32abaf
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Electronic Highway Sign
+  - Messe Duesseldorf
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
