@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstantRotation : MonoBehaviour
+public class RotationController : MonoBehaviour
 {
     private Touch touch;
     private Vector3 rotationY;
@@ -14,7 +14,7 @@ public class ConstantRotation : MonoBehaviour
     {
         if (zoom)
         {
-            transform.Rotate(new Vector3(0, 0.3f, 0), Space.World);
+            transform.Rotate(new Vector3(0, 1, 0), Space.World);
         }
         else
         {
@@ -26,9 +26,9 @@ public class ConstantRotation : MonoBehaviour
             {
                 if (rotationY.y != 0 && Time.time - clock > 0.1f)
                 {
-                    rotationY = RotateY(rotationY.y * 0.5f);
+                    rotationY *= 0.9f;
 
-                    if (rotationY.y < 0.0002f && rotationY.y > -0.0002f)
+                    if (rotationY.y < 0.8 && rotationY.y > -0.8)
                     {
                         rotationY = Vector3.zero;
                     }
@@ -36,7 +36,7 @@ public class ConstantRotation : MonoBehaviour
                 }
             }
 
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Moved && Input.touchCount > 0)
             {
                 rotationY = RotateY(-touch.deltaPosition.x * rotateSpeedModifier);
             }
@@ -46,6 +46,11 @@ public class ConstantRotation : MonoBehaviour
     public void changeZoom()
     {
         zoom = !zoom;
+    }
+    public void ResetRotation()
+    {
+        rotationY *= 0;
+        transform.rotation = Quaternion.Euler(RotateY(200));
     }
     private Vector3 RotateY(float y)
     {
