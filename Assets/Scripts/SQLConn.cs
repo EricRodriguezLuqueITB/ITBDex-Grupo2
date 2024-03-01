@@ -15,8 +15,8 @@ static public class SQLConn
     {
         IDbConnection dbConnection = CreateAndOpenDatabase();
         IDbCommand dbCommand = dbConnection.CreateCommand();
-        dbCommand.CommandText = "INSERT OR REPLACE INTO Seasons (SeasonID, season) VALUES (1, 'Summer'), (2, 'Autumm'), (3, 'Winter'), (4, 'Spring');";
-        dbCommand.CommandText += "INSERT OR REPLACE INTO Types (TypeID, type) VALUES (1, 'Fire'), (2, 'Water'), (3, 'Ground'),(4, 'Wind'), (5, 'Electric');";
+        dbCommand.CommandText = "INSERT OR REPLACE INTO Seasons (SeasonID, season) VALUES (0, 'Origin'), (1, 'Summer'), (2, 'Autumm'), (3, 'Winter'), (4, 'Spring');";
+        dbCommand.CommandText += "INSERT OR REPLACE INTO Types (TypeID, type) VALUES (0, 'Origin'), (1, 'Fire'), (2, 'Water'), (3, 'Ground'),(4, 'Wind'), (5, 'Electric');";
         dbCommand.CommandText += "INSERT OR REPLACE INTO Fakemons (id, name, SeasonID, TypeID, info) VALUES " +
         "(1, 'Jack o''Bat', 2, 1, 'La voluntad del Otoño|Un AttumBat que no logra ser aceptado acaba regresando como Jack O’bat, un espíritu que ahora hará más que simples bromas a aquellos que disturban su momento de solitud en su castillo o su campo de calabazas. Según testigos, las calabazas de su campo son sus amigos imaginarios.')," +
         "(2, 'AttumBat', 2, 4, 'El espíritu del Otoño|Este pequeño espíritu cariñoso a simple vista, es en realidad un travieso bromista, que le encanta gastarle bromas a los aldeanos y sus cultivos. No obstante, cuando sus bromas llegan demasiado lejos, ayuda a los aldeanos con sus cosechas como disculpa. Todo un bromista pero en el fondo solo quiere amigos con quien jugar y ayudar.')," +
@@ -24,7 +24,7 @@ static public class SQLConn
         //Estos son los de verdad
         "(4, 'Praisand', 1, 2, 'El espíritu del Verano|Este espíritu es el guardián del mayor oasis de la isla veraniega. Se dice que custodia un tesoro el cual lo trajo a la vida, y cualquier persona con intención de echarle las manos encima es barrido por crueles olas de agua o arena. Es bastante agresivo y percibe a cualquier persona que se acerque a su oasis como un ladrón')," +
         "(5, 'Bunnillow', 4, 3, 'El espíritu del Primavera|Tímido pero cariñoso, este espíritu vive tranquilamente en el centro de su laberinto donde se dice que hay un hermoso jardín con todas las flores y frutas de nuestro mundo. No obstante, algunos viajeros aseguran haberle visto paseando por el bosque o por el campo de flores.')," +
-        "(6, 'Syzygy', 4, 5, 'El creador de las estaciones|Nadie sabe cuándo o de donde apareció este espíritu, pero dicen las leyendas que con su llegada las estaciones nacieron, y el mundo que solía ser vacío y desolado fue remodelado con un sinfín de vida y colores.');";
+        "(6, 'Syzygy', 0, 0, 'El creador de las estaciones|Nadie sabe cuándo o de donde apareció este espíritu, pero dicen las leyendas que con su llegada las estaciones nacieron, y el mundo que solía ser vacío y desolado fue remodelado con un sinfín de vida y colores.');";
 
         dbCommand.ExecuteNonQuery();
         return dbConnection;
@@ -32,7 +32,7 @@ static public class SQLConn
 
     static private IDbConnection CreateAndOpenDatabase()
     {
-        
+        /*
         //Application database Path android
         string filepath = Application.persistentDataPath + "/" + "itbdex.s3db";
         if (!File.Exists(filepath))
@@ -46,10 +46,10 @@ static public class SQLConn
         }
             // Open a connection to the database.
             string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.s3db";
-        
+        */
 
         // Open a connection to the database.
-        //string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex.sqlite";
+        string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex.sqlite";
 
         IDbConnection dbConnection = new SqliteConnection(dbUri);
         dbConnection.Open();

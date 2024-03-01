@@ -36,6 +36,9 @@ public class Dex : MonoBehaviour
 
             switch (f.type)
             {
+                case "Origin":
+                    img.color = Color.white;
+                    break;
                 case "Fire":
                     img.color = new Color(0.97f, 0.41f, 0.41f);
                     break;
