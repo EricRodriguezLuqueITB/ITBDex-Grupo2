@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using TMPro;
+using System.IO;
+using UnityEngine.Android;
+using System.Text;
 
 public class GameManager : MonoBehaviour
 { 
@@ -18,18 +21,24 @@ public class GameManager : MonoBehaviour
     public GameObject stage3d;
     public TMP_FontAsset font;
 
+    public GameObject testo;
+
     public static GameManager instance;
 
 
     void Awake()
     {
-        fakemons = SQLConn.GetFakemon();
-        fakemonsFiltered = fakemons;
         if (instance == null)
         {
             instance = this;
         }
         else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        fakemons = SQLConn.GetFakemon();
+        fakemonsFiltered = fakemons;
     }
     private void ChangeTypo()
     {
@@ -46,6 +55,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         ChangeTypo();
+    }
+    public static void Escribir(string cosa)
+    {
+        instance.testo.GetComponent<TextMeshProUGUI>().text += "\n" + cosa;
     }
     public void SetModel(string name)
     {

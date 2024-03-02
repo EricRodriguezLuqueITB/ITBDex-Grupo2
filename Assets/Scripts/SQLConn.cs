@@ -1,12 +1,10 @@
 using System.Data;
-using UnityEngine;
 using Mono.Data.Sqlite;
-using TMPro;
-using System.Data.Common;
-using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
 
 // Grupo2 (ITBDex)
 static public class SQLConn
@@ -43,15 +41,21 @@ static public class SQLConn
             // then save to Application.persistentDataPath
             File.WriteAllBytes(filepath, loadDB.bytes);
 
-        }
-            // Open a connection to the database.
-            string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.s3db";
-        */
-
+        }*/
         // Open a connection to the database.
-        string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex.sqlite";
+        //string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.s3db";
+                
+        // Open a connection to the database.
+        //string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex";
+        IDbConnection dbConnection;
 
-        IDbConnection dbConnection = new SqliteConnection(dbUri);
+        //string dbUri = Application.persistentDataPath + "/ddbb/itbdex.sqlite";
+        string dbUri = Application.streamingAssetsPath + "/itbdex.sqlite";
+
+        File.Create(dbUri);
+
+        dbConnection = new SqliteConnection(dbUri);
+
         dbConnection.Open();
 
         // Create a table for the fakemons in the database if it does not exist yet.
@@ -73,7 +77,7 @@ static public class SQLConn
     }
     static public List<Fakemon> GetFakemon()
     {
-        List<Fakemon> fakemons = new List<Fakemon>();
+        List<Fakemon> fakemons = new();
         IDbConnection dbConnection = InsertThings();
         IDbCommand dbCommanSelect = dbConnection.CreateCommand();
         dbCommanSelect.CommandText = "SELECT * FROM FakemonsView";
