@@ -9242,7 +9242,7 @@ MonoBehaviour:
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
   font: {fileID: 11400000, guid: 75ffe51cddd89c144bc16a9fabeb34b2, type: 2}
-  testo: {fileID: 1172947012}
+  testo: {fileID: 0}
 --- !u!4 &1714143775
 Transform:
   m_ObjectHideFlags: 0

@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "RFCT718C2SV",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RFCT718C2SV",
+        "name": "com.itbdex.com",
+        "processId": 32720,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -37,6 +37,36 @@
             "name": "com.itbdex.com",
             "processId": 25999,
             "exited": true
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 29137,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 30203,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 30967,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 32027,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 32720,
+            "exited": false
         }
     ],
     "m_Tags": {

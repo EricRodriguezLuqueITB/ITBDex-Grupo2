@@ -47,14 +47,11 @@ static public class SQLConn
                 
         // Open a connection to the database.
         //string dbUri = $"URI=file:{Application.streamingAssetsPath}/itbdex";
-        IDbConnection dbConnection;
 
         //string dbUri = Application.persistentDataPath + "/ddbb/itbdex.sqlite";
-        string dbUri = Application.streamingAssetsPath + "/itbdex.sqlite";
+        string dbUri = $"URI=file:{Application.persistentDataPath}/itbdex.sqlite";
 
-        File.Create(dbUri);
-
-        dbConnection = new SqliteConnection(dbUri);
+        IDbConnection dbConnection = new SqliteConnection(dbUri);
 
         dbConnection.Open();
 
