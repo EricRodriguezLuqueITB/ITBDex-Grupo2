@@ -312,7 +312,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373af8cea8e3b864f9098ccf44a1da1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: AttumBat_Attack
+    clip: {fileID: 8300000, guid: 3473bde06c183a04aaec2fa764267e41, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Bunnillow_Attack
+    clip: {fileID: 8300000, guid: 0bb35b6b3bedab940bc2473dfbcac29c, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Bunnillow_Idel
+    clip: {fileID: 8300000, guid: d5ca297a01956d04f8a9288db40f98b3, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: JackO'Bat__Attack
+    clip: {fileID: 8300000, guid: 1024fc7a36a15474bbd945431d2a980d, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Nortree_Attack
+    clip: {fileID: 8300000, guid: d151332444bed7a418f10b97bd5427ad, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Syzygy_Attack
+    clip: {fileID: 8300000, guid: 94933d8d4b254984d9ad6e1ee54967bd, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
   music:
   - name: Main
     clip: {fileID: 8300000, guid: 2292f960f89429c4bbac0cdba5a5fb0d, type: 3}
@@ -9242,7 +9278,6 @@ MonoBehaviour:
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
   font: {fileID: 11400000, guid: 75ffe51cddd89c144bc16a9fabeb34b2, type: 2}
-  testo: {fileID: 0}
 --- !u!4 &1714143775
 Transform:
   m_ObjectHideFlags: 0

@@ -79,7 +79,8 @@ PrefabInstance:
       value: Bunnillow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: f8aa2a218b38ec945a91dab5320dd65a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8aa2a218b38ec945a91dab5320dd65a, type: 3}
