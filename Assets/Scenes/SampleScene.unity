@@ -9225,6 +9225,10 @@ MonoBehaviour:
   - {fileID: 1922035840, guid: 2f30710ce70625540a9413f50316a4d2, type: 3}
   - {fileID: 21300000, guid: a35ca25270bce5e42b3a9e558d78d6ee, type: 3}
   - {fileID: 21300000, guid: b387c4bae9c57ca449ed5848e6040318, type: 3}
+  - {fileID: 21300000, guid: 62ac4f0363e34db4b9ba0425d797ebd4, type: 3}
+  - {fileID: 21300000, guid: e9cacc666d5b1664885b379a78950837, type: 3}
+  - {fileID: 21300000, guid: 433dfef17dae7f640867ca829d6a285f, type: 3}
+  - {fileID: 21300000, guid: efdacb2ff9171cf4da32d800d3cfbd71, type: 3}
   models:
   - {fileID: 921320613141630458, guid: f77e04a9e7e3fb749ba4b7b388f76a9e, type: 3}
   - {fileID: 805628021611048393, guid: d893afe0589a6dc409def410a67afc37, type: 3}
@@ -9241,8 +9245,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9f49f8f4c38395d469407686df476abe, type: 3}
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
-  font: {fileID: 11400000, guid: 75ffe51cddd89c144bc16a9fabeb34b2, type: 2}
-  testo: {fileID: 0}
+  font: {fileID: 11400000, guid: 760a4ad9327bae8458f9fe939bbc22ae, type: 2}
 --- !u!4 &1714143775
 Transform:
   m_ObjectHideFlags: 0

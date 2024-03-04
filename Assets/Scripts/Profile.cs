@@ -22,7 +22,7 @@ public class Profile : MonoBehaviour
         SetText(nickname, fk.info.Split('|')[0]);
         SetText(description, fk.info.Split('|')[1]);
 
-        List<Sprite> result = GameManager.instance.GetComponent<GameManager>().pixelArts.Where(item => item.name.Contains(fk.fakename)).ToList();
+        List<Sprite> result = GameManager.instance.GetComponent<GameManager>().pixelArts.Where(item => item.name.ToLower().Contains(fk.fakename.ToLower())).ToList();
 
         icon.GetComponent<UnityEngine.UI.Image>().sprite = result.Count > 0 ? result[0] : null;
         icon.GetComponent<UnityEngine.UI.Image>().color = result.Count > 0 ? Color.white : new Color(0,0,0,0);

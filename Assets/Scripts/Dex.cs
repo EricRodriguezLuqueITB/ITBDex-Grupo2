@@ -82,14 +82,14 @@ public class Dex : MonoBehaviour
     }
     public void SetPixelArt(string name)
     {
-        List<Sprite> result = GameManager.instance.pixelArts.Where(item => item.name.Contains(name)).ToList();
+        List<Sprite> result = GameManager.instance.pixelArts.Where(item => item.name.ToLower().Contains(name.ToLower())).ToList();
 
         pixelArtCage.GetComponent<Image>().sprite = result.Count > 0 ? result[0] : GameManager.instance.pixelArts[0];
         pixelArtCage.GetComponentInChildren<TextMeshProUGUI>().text = "";
     }
     public void Search(string text)
     {
-        GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.Contains(text)).ToList();
+        GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.ToLower().Contains(text.ToLower())).ToList();
         if (actualSeason != "Clear") GameManager.instance.fakemonsFiltered = GameManager.instance.fakemonsFiltered.Where(item => item.season == actualSeason).ToList();
         CreateList(SortFakemon(actualSort, false));
         textSearch = text;

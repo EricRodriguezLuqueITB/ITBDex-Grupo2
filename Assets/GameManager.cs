@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetModel(string name)
     {
-        var result = models.Where(item => item.name.Contains(name)).ToList();
+        var result = models.Where(item => item.name.ToLower().Contains(name.ToLower())).ToList();
 
         if (modelInstance != null) Destroy(modelInstance);
 
