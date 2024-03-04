@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     public GameObject stage3d;
     public TMP_FontAsset font;
 
-    public GameObject testo;
-
     public static GameManager instance;
 
 
@@ -56,10 +54,6 @@ public class GameManager : MonoBehaviour
     {
         ChangeTypo();
     }
-    public static void Escribir(string cosa)
-    {
-        instance.testo.GetComponent<TextMeshProUGUI>().text += "\n" + cosa;
-    }
     public void SetModel(string name)
     {
         var result = models.Where(item => item.name.Contains(name)).ToList();
@@ -67,33 +61,6 @@ public class GameManager : MonoBehaviour
         if (modelInstance != null) Destroy(modelInstance);
 
         modelInstance = Instantiate(result.Count > 0 ? result[0] : models[0], stage3d.transform);
-    }
-
-    public void Show(int method)
-    {
-        foreach (var item in fakemons)
-        {
-            switch (method)
-            {
-                case 0:
-                    Debug.Log(item.fakename);
-                    Debug.Log(item.id);
-                    break;
-                case 1:
-                    Debug.Log(item.fakename);
-                    Debug.Log(item.info);
-                    break;
-                case 2:
-                    Debug.Log(item.fakename);
-                    Debug.Log(item.season);
-                    break;
-                case 3:
-                    Debug.Log(item.fakename);
-                    Debug.Log(item.type);
-                    break;
-            }
-
-        }
     }
     public void CloseGame()
     {
