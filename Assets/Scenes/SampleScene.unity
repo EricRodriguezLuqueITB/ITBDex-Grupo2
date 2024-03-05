@@ -315,37 +315,37 @@ MonoBehaviour:
   sounds:
   - name: AttumBat_Attack
     clip: {fileID: 8300000, guid: 3473bde06c183a04aaec2fa764267e41, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Bunnillow_Attack
     clip: {fileID: 8300000, guid: 0bb35b6b3bedab940bc2473dfbcac29c, type: 3}
-    volume: 0
+    volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Bunnillow_Idel
     clip: {fileID: 8300000, guid: d5ca297a01956d04f8a9288db40f98b3, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: JackO'Bat__Attack
+  - name: Jack o'Bat_Attack
     clip: {fileID: 8300000, guid: 1024fc7a36a15474bbd945431d2a980d, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Nortree_Attack
     clip: {fileID: 8300000, guid: d151332444bed7a418f10b97bd5427ad, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Syzygy_Attack
     clip: {fileID: 8300000, guid: 94933d8d4b254984d9ad6e1ee54967bd, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -4507,6 +4507,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 63905536}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopPlayingAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 181635503}
         m_TargetAssemblyTypeName: ConstantRotation, Assembly-CSharp
         m_MethodName: changeZoom
@@ -9266,7 +9278,7 @@ MonoBehaviour:
   - {fileID: 805628021611048393, guid: d893afe0589a6dc409def410a67afc37, type: 3}
   - {fileID: 7476261505073036061, guid: d9b4e38c6ff8ec64ea723e5c8bece37e, type: 3}
   - {fileID: 2811569504904830411, guid: e635049595bed6d4abec0737d77fb407, type: 3}
-  - {fileID: 6113884396765928320, guid: 6d5a70dcab161ce4195f764fec2ca597, type: 3}
+  - {fileID: 1070234339080781475, guid: d7415ec45e6012d43890482a83bb20cb, type: 3}
   - {fileID: 3038019436286610417, guid: 2582b24772917b34dac352ff6d6b7a2d, type: 3}
   - {fileID: 7959768236392102721, guid: 84b1c1ac0582e994c8907fb633b49aad, type: 3}
   seasonIcons:
@@ -9277,7 +9289,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9f49f8f4c38395d469407686df476abe, type: 3}
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
-  font: {fileID: 11400000, guid: 75ffe51cddd89c144bc16a9fabeb34b2, type: 2}
+  font: {fileID: 11400000, guid: 760a4ad9327bae8458f9fe939bbc22ae, type: 2}
 --- !u!4 &1714143775
 Transform:
   m_ObjectHideFlags: 0

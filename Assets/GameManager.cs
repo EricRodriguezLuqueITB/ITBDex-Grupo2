@@ -49,6 +49,13 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public bool CheckZoom()
+    {
+        GameObject rotCon = GameObject.Find("Stage3D");
+
+        if (rotCon.TryGetComponent(out RotationController rc)) return !rc.zoom;
+        return true;
+    }
 
     void Update()
     {
