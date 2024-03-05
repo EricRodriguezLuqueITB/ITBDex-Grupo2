@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 244cdf4fb53b1f64b9a7f937fafa8287
+guid: c4e1323840ed24843966a17a579c2e0b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 41a2e2723eabda047ae16d90dd0ab529, type: 2}
+      name: Marron
+    second: {fileID: 2100000, guid: 0a489ea4821b2964496a30f2203574c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GoldTrim
-    second: {fileID: 2100000, guid: 4415b15798948e74fb4def8bb796eab1, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: b1ea5ff603f0cc244b51b63e7d456063, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Resina
-    second: {fileID: 2100000, guid: 41e03c66e7839e84b9eee1f07ea454df, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: 228bb7470bbbe6440a593206a0d8478c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: White
-    second: {fileID: 2100000, guid: b0b3a39fb8cc41742a5e3806f36e9473, type: 2}
+      name: Material.005
+    second: {fileID: 2100000, guid: f37aa28a8fa8aa34d972357fdda593d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 966e970197399504e858a47292510e70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Naranja
+    second: {fileID: 2100000, guid: 32106ec4de3559643ad0ff24dcdf4115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro
+    second: {fileID: 2100000, guid: fd81285191c3e924dab80152d691a768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emission
+    second: {fileID: 2100000, guid: 7d2e42b3b39216a4c86298780201e56f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,36 +71,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|ArmatureAction.001
-      takeName: Armature|ArmatureAction.001
-      internalID: -1422011007694221501
-      firstFrame: 0
-      lastFrame: 239
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
