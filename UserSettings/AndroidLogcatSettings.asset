@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RFCT718C2SV",
         "name": "com.itbdex.com",
-        "processId": 4812,
+        "processId": 7560,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,12 @@
             "deviceId": "RFCT718C2SV",
             "name": "com.itbdex.com",
             "processId": 4812,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCT718C2SV",
+            "name": "com.itbdex.com",
+            "processId": 7560,
             "exited": false
         }
     ],

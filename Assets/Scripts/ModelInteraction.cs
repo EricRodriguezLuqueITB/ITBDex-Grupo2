@@ -32,7 +32,7 @@ public class ModelInteraction : MonoBehaviour
                     break;
             }
         }
-        if(idleSoundName != null && !GameManager.instance.CheckZoom() && !AudioManager.instance.sounds.Where(item => item.name == idleSoundName).ToList()[0].source.isPlaying) AudioManager.instance.ChoosePlay(idleSoundName, 0);
+        if(idleSoundName != null && GameObject.Find("Profile") != null && !AudioManager.instance.sounds.Where(item => item.name == idleSoundName).ToList()[0].source.isPlaying) AudioManager.instance.ChoosePlay(idleSoundName, 0);
     }
 
     private void Interact()
