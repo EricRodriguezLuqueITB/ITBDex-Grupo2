@@ -8,12 +8,13 @@ public class ModelInteraction : MonoBehaviour
 {
     private Touch touch;
     private Vector2 startPosition;
+    private string idleSoundName;
 
     private void Start()
     {
         List<Sound> sounds = AudioManager.instance.sounds.Where(item => item.name.Contains(name.Split('(')[0]) && item.name.ToLower().Contains("idle")).ToList();
 
-        if (sounds.Count > 0) AudioManager.instance.ChoosePlay(sounds[0].name, 0);
+        if (sounds.Count > 0) idleSoundName = sounds[0].name;
     }
     private void Update()
     {
@@ -31,6 +32,7 @@ public class ModelInteraction : MonoBehaviour
                     break;
             }
         }
+        if(idleSoundName != null && !GameManager.instance.CheckZoom() && !AudioManager.instance.sounds.Where(item => item.name == idleSoundName).ToList()[0].source.isPlaying) AudioManager.instance.ChoosePlay(idleSoundName, 0);
     }
 
     private void Interact()
