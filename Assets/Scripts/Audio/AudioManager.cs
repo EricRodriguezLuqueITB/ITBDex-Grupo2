@@ -18,7 +18,6 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-
         else
         {
             Destroy(gameObject);
@@ -29,7 +28,10 @@ public class AudioManager : MonoBehaviour
         SetAudioParameters(sounds, "Sound");
         SetAudioParameters(music, "Music");
 
+        ChangeVolumen(PlayerPrefs.HasKey("Sounds") ? PlayerPrefs.GetFloat("Sounds") : 1, 1);
+        ChangeVolumen(PlayerPrefs.HasKey("Music") ? PlayerPrefs.GetFloat("Music") : 1, 1);
     }
+
     private void SetAudioParameters(Sound[] array, string type)
     {
         foreach (Sound sound in array)
