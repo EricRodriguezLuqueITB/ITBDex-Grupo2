@@ -3,47 +3,7 @@ guid: c4e1323840ed24843966a17a579c2e0b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Marron
-    second: {fileID: 2100000, guid: 0a489ea4821b2964496a30f2203574c0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: b1ea5ff603f0cc244b51b63e7d456063, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 228bb7470bbbe6440a593206a0d8478c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: f37aa28a8fa8aa34d972357fdda593d6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: 966e970197399504e858a47292510e70, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Naranja
-    second: {fileID: 2100000, guid: 32106ec4de3559643ad0ff24dcdf4115, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro
-    second: {fileID: 2100000, guid: fd81285191c3e924dab80152d691a768, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: emission
-    second: {fileID: 2100000, guid: 7d2e42b3b39216a4c86298780201e56f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
