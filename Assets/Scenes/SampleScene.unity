@@ -5471,7 +5471,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 152568048}
   efectSlider: {fileID: 408342971}
-  audioManager: {fileID: 63905536}
 --- !u!1 &879128062
 GameObject:
   m_ObjectHideFlags: 0
@@ -9249,6 +9248,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 08f6cc9a5b2b36448ab67f715effdbe8, type: 3}
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
+  stageFrame: {fileID: 0}
   font: {fileID: 11400000, guid: 760a4ad9327bae8458f9fe939bbc22ae, type: 2}
 --- !u!4 &1714143775
 Transform:
@@ -9360,6 +9360,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 63905536}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopPlayingAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 271418816}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
