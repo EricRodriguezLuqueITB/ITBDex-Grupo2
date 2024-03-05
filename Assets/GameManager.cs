@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
 
         modelInstance = Instantiate(result.Count > 0 ? result[0] : models[0], stage3d.transform);
 
+        modelInstance.AddComponent<ModelInteraction>();
+
         string season = fakemons.Where(item => item.fakename.Contains(name)).ToList()[0].season;
 
         if (seasonFrames.Where(item => item.name.Contains(season)).ToList().Count > 0)
