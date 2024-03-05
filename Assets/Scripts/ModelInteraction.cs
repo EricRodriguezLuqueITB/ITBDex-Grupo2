@@ -11,10 +11,9 @@ public class ModelInteraction : MonoBehaviour
 
     private void Start()
     {
-        List<Sound> sounds = AudioManager.instance.sounds.Where(item => item.name.ToLower().Contains(name.Split('(')[0]) && item.name.ToLower().Contains("idle")).ToList();
+        List<Sound> sounds = AudioManager.instance.sounds.Where(item => item.name.Contains(name.Split('(')[0]) && item.name.ToLower().Contains("idle")).ToList();
 
         if (sounds.Count > 0) AudioManager.instance.ChoosePlay(sounds[0].name, 0);
-
     }
     private void Update()
     {

@@ -325,12 +325,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: Bunnillow_Idel
+  - name: Bunnillow_Idle
     clip: {fileID: 8300000, guid: d5ca297a01956d04f8a9288db40f98b3, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
-    loop: 0
+    loop: 1
   - name: Jack o'Bat_Attack
     clip: {fileID: 8300000, guid: 1024fc7a36a15474bbd945431d2a980d, type: 3}
     volume: 0.5
@@ -9248,7 +9248,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 08f6cc9a5b2b36448ab67f715effdbe8, type: 3}
   modelInstance: {fileID: 0}
   stage3d: {fileID: 181635502}
-  stageFrame: {fileID: 0}
+  stageFrame: {fileID: 1104279378}
   font: {fileID: 11400000, guid: 760a4ad9327bae8458f9fe939bbc22ae, type: 2}
 --- !u!4 &1714143775
 Transform:
