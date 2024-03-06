@@ -86,6 +86,8 @@ public class Dex : MonoBehaviour
 
         pixelArtCage.GetComponent<Image>().sprite = result.Count > 0 ? result[0] : GameManager.instance.pixelArts[0];
         pixelArtCage.GetComponentInChildren<TextMeshProUGUI>().text = "";
+
+        pixelArtCage.transform.Find("Name").GetComponentInChildren<TextMeshProUGUI>().text = name;
     }
     public void Search(string text)
     {
