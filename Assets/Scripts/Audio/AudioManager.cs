@@ -18,7 +18,6 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-
         else
         {
             Destroy(gameObject);
@@ -29,7 +28,10 @@ public class AudioManager : MonoBehaviour
         SetAudioParameters(sounds, "Sound");
         SetAudioParameters(music, "Music");
 
+        ChangeVolumen(PlayerPrefs.HasKey("Sounds") ? PlayerPrefs.GetFloat("Sounds") : 1, 1);
+        ChangeVolumen(PlayerPrefs.HasKey("Music") ? PlayerPrefs.GetFloat("Music") : 1, 1);
     }
+
     private void SetAudioParameters(Sound[] array, string type)
     {
         foreach (Sound sound in array)
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
 
-            sound.source.volume = PlayerPrefs.GetFloat(type);
+            sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
@@ -78,6 +80,14 @@ public class AudioManager : MonoBehaviour
         //}
 
         sound.source.Play();
+    }
+
+    public void StopPlayingAll()
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.source.Stop();
+        }
     }
 
     public void StopPlaying(string sound)

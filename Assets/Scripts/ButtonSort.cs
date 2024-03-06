@@ -13,10 +13,16 @@ public class ButtonSort : MonoBehaviour
     void Start()
     {
         dex = dexObj.GetComponent<Dex>();
-        GetComponent<Button>().onClick.AddListener(Action);
+
+        GetComponent<Button>().onClick.AddListener(name.Contains("Filter") ? FilterSeason : SortNum);
+
     }
-    private void Action()
+    private void SortNum()
     {
         dex.Search(sortNum);
+    }
+    private void FilterSeason()
+    {
+        dex.FilterSeason(name[6..]);
     }
 }

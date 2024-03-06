@@ -14,8 +14,9 @@ public class Dex : MonoBehaviour
 
     [SerializeField] private GameObject pixelArtCage;
     public int actualSort;
-    private string textSearch;
+    private string textSearch = "";
     private bool reversed;
+    private string actualSeason = "Clear";
 
     private void OnEnable()
     {
@@ -35,6 +36,9 @@ public class Dex : MonoBehaviour
 
             switch (f.type)
             {
+                case "Origin":
+                    img.color = Color.white;
+                    break;
                 case "Fire":
                     img.color = new Color(0.97f, 0.41f, 0.41f);
                     break;
@@ -68,6 +72,7 @@ public class Dex : MonoBehaviour
                 }
             }
 
+            obj.GetComponentsInChildren<Image>().Where(item => item.name == "SeasonIcon").ToArray()[0].sprite = GameManager.instance.seasonIcons.Where(item => item.name == f.season).ToArray()[0];
 
             ProfileButton pb = obj.GetComponent<ProfileButton>();
 
@@ -77,20 +82,28 @@ public class Dex : MonoBehaviour
     }
     public void SetPixelArt(string name)
     {
-        List<Sprite> result = GameManager.instance.pixelArts.Where(item => item.name.Contains(name)).ToList();
+        List<Sprite> result = GameManager.instance.pixelArts.Where(item => item.name.ToLower().Contains(name.ToLower())).ToList();
 
         pixelArtCage.GetComponent<Image>().sprite = result.Count > 0 ? result[0] : GameManager.instance.pixelArts[0];
         pixelArtCage.GetComponentInChildren<TextMeshProUGUI>().text = "";
+
+        pixelArtCage.transform.Find("Name").GetComponentInChildren<TextMeshProUGUI>().text = name;
     }
     public void Search(string text)
     {
-        GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.Contains(text)).ToList();
+        GameManager.instance.fakemonsFiltered = GameManager.instance.fakemons.Where(item => item.fakename.ToLower().Contains(text.ToLower())).ToList();
+        if (actualSeason != "Clear") GameManager.instance.fakemonsFiltered = GameManager.instance.fakemonsFiltered.Where(item => item.season == actualSeason).ToList();
         CreateList(SortFakemon(actualSort, false));
         textSearch = text;
     }
     public void Search(int sort)
     {
         CreateList(SortFakemon(sort, true));
+    }
+    public void FilterSeason(string season)
+    {
+        actualSeason = season;
+        Search(textSearch);
     }
     public List<Fakemon> SortFakemon(int method, bool revers)
     {

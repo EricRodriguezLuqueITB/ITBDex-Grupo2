@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ProfileButton : MonoBehaviour, IPointerUpHandler
+public class ProfileButton : MonoBehaviour
 {
     public Fakemon fk;
     public Button btn;
@@ -18,9 +18,5 @@ public class ProfileButton : MonoBehaviour, IPointerUpHandler
         profile.SetActive(true);
 
         GameObject.Find("Canvas").transform.Find("Dex").gameObject.SetActive(false);
-    }
-    public void OnPointerUp(PointerEventData a)
-    {
-        transform.parent.parent.parent.GetComponent<Dex>().SetPixelArt(fk.fakename);
     }
 }
