@@ -50,5 +50,11 @@ public class ModelInteraction : MonoBehaviour
                 if(soundsF.Count == 1) AudioManager.instance.ChoosePlay(soundsF[0].name, 0);
                 break;
         }
+
+        if(TryGetComponent(out Animator anim))
+        {
+            anim.logWarnings = false;
+            anim.SetTrigger("Attack");
+        }
     }
 }
