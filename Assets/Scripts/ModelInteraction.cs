@@ -28,7 +28,7 @@ public class ModelInteraction : MonoBehaviour
                     startPosition = touch.position;
                     break;
                 case TouchPhase.Ended:
-                    if (startPosition == touch.position) Interact();
+                    if (Vector2.Distance(startPosition, touch.position) < 1) Interact();
                     break;
             }
         }

@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4781951162920444690, guid: 42f5a2a877f4c334cb945869cece5e55,
+  m_Motion: {fileID: -1422011007694221501, guid: 244cdf4fb53b1f64b9a7f937fafa8287,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -71,7 +71,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -4574417121280339507, guid: 42f5a2a877f4c334cb945869cece5e55,
+  m_Motion: {fileID: 4065910277313914012, guid: 244cdf4fb53b1f64b9a7f937fafa8287,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -103,30 +103,6 @@ AnimatorController:
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
-  - serializedVersion: 5
-    m_Name: Orejas
-    m_StateMachine: {fileID: 8779208718964897696}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 1
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 1
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
-  - serializedVersion: 5
-    m_Name: Equilibrio
-    m_StateMachine: {fileID: 6357774597983098275}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 1
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
